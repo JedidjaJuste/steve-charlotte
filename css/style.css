@@ -1,0 +1,1083 @@
+/* ==================================================
+   VARIABLES DE BASE
+================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivoire);
+  color: var(--encre);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: var(--or-fonce);
+}
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==================================================
+   SECTIONS GENERALES
+================================================== */
+
+.section {
+  padding: 5.5rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==================================================
+   SCROLL REVEAL
+================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================================================
+   SEAL / MONOGRAMME
+================================================== */
+
+.seal {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--or),
+    var(--or-fonce)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(78,28,40,.35);
+}
+
+.seal::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(228,211,180,.55);
+}
+
+.seal-initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--or-clair);
+  font-size: 1.55rem;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .82;
+  animation: heroZoom 12s ease-out forwards;
+}
+
+.hero-photo-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(20,12,14,.35),
+      rgba(20,12,14,.55)
+    ),
+    linear-gradient(
+      135deg,
+      #7a3346,
+      #3a1620
+    );
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(20,12,14,.15) 62%,
+      rgba(20,12,14,.45) 75%,
+      rgba(20,12,14,.82) 100%
+    );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #FDF8F0;
+  padding: 3.5rem 1.5rem 4.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.hero .seal {
+  margin: 0 auto 1.6rem;
+}
+
+.hero-names {
+  font-size: clamp(2.6rem,8vw,5.2rem);
+  line-height: 1.05;
+}
+
+.hero-names .amp {
+  display: inline-block;
+  font-style: italic;
+  color: var(--or-clair);
+  padding: 0 .25em;
+}
+
+.hero-date {
+  margin-top: .9rem;
+  font-size: .82rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--or-clair);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: .8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(253,248,240,.7);
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(
+    rgba(253,248,240,.75),
+    transparent
+  );
+  animation: scrollpulse 2s infinite;
+}
+
+@keyframes scrollpulse {
+  0%,
+  100% {
+    opacity: .3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ==================================================
+   VERSET
+================================================== */
+
+.verse-section {
+  background: var(--carte);
+}
+
+.verse-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  color: var(--or);
+}
+
+.verse-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem,3vw,1.8rem);
+  max-width: 640px;
+  margin: auto;
+}
+
+.verse-ref {
+  margin-top: 1.1rem;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--encre-clair);
+}
+
+/* ==================================================
+   HISTOIRE
+================================================== */
+
+.story-section {
+  background: var(--ivoire);
+}
+
+.story-section h2 {
+  margin-top: .8rem;
+  font-size: clamp(1.8rem,4vw,2.5rem);
+}
+
+.story-section p {
+  max-width: 650px;
+  margin: 1.5rem auto 0;
+  line-height: 1.9;
+  opacity: .85;
+}
+
+/* ==================================================
+   ALLIANCES
+================================================== */
+
+.rings-section {
+  padding: 50px 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rings-image {
+  width: 300px;
+  max-width: 60vw;
+  animation: ringFloat 7s ease-in-out infinite;
+  filter: drop-shadow(
+    0 15px 25px rgba(0,0,0,.20)
+  );
+}
+
+@keyframes ringFloat {
+  0% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+}
+
+/* ==================================================
+   COMPTE A REBOURS
+================================================== */
+
+.countdown-section {
+  background: var(--ivoire);
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: clamp(.8rem,4vw,2.5rem);
+  flex-wrap: wrap;
+  margin-top: 2.2rem;
+}
+
+.countdown-unit {
+  min-width: 78px;
+  transition: .3s ease;
+}
+
+.countdown-unit:hover {
+  transform: translateY(-6px);
+}
+
+.countdown-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.3rem,6vw,3.6rem);
+  color: var(--or);
+  font-weight: 600;
+}
+
+.countdown-label {
+  font-size: .66rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--encre-clair);
+}
+
+.countdown-done {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--or);
+}
+
+/* ==================================================
+   PROGRAMME
+================================================== */
+
+.program-section {
+  background: var(--carte);
+}
+
+.program-section h2 {
+  margin-top: .8rem;
+  font-size: clamp(1.8rem,4vw,2.5rem);
+}
+
+.program-item {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--ligne);
+  border-radius: 12px;
+  display: inline-block;
+  min-width: 220px;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.program-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(43,38,32,.12);
+}
+
+.program-item h3 {
+  color: var(--or);
+  font-size: 2rem;
+}
+
+.program-item p {
+  margin-top: .5rem;
+  color: var(--encre-clair);
+}
+
+/* ==================================================
+   LOCATION + MAP
+================================================== */
+
+.location-section {
+  background: var(--carte);
+}
+
+.location-name {
+  margin-top: .6rem;
+  font-size: clamp(1.6rem,4vw,2.2rem);
+}
+
+.location-address {
+  margin-top: .5rem;
+  opacity: .75;
+  font-size: .95rem;
+}
+
+.map-frame {
+  margin-top: 2.2rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(43,38,32,.14);
+  border: 1px solid var(--ligne);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 340px;
+  border: 0;
+  display: block;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  color: var(--or);
+  border-bottom: 1px solid var(--or);
+}
+
+/* ==================================================
+   GALERIE
+================================================== */
+
+.gallery-section {
+  background: var(--ivoire);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: .6rem;
+  margin-top: 2.4rem;
+}
+
+.gallery-grid a {
+  overflow: hidden;
+  border-radius: 18px;
+  display: block;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.05);
+}
+
+.gallery-grid a:nth-child(4n+1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ==================================================
+   MESSAGE DES MARIES
+================================================== */
+
+.message-section {
+  background: var(--or-fonce);
+  color: var(--ivoire);
+}
+
+.message-section h2 {
+  color: var(--ivoire);
+  margin-top: .8rem;
+  font-size: clamp(1.8rem,4vw,2.5rem);
+}
+
+.message-section p {
+  max-width: 650px;
+  margin: 1.5rem auto 0;
+  color: rgba(253,248,240,.8);
+  line-height: 1.9;
+}
+
+.message-section .divider {
+  margin-bottom: 2.5rem;
+}
+
+.message-section .divider .line {
+  background: rgba(253,248,240,.25);
+}
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+  max-width: 420px;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--ligne);
+}
+
+.divider .seal {
+  width: 42px;
+  height: 42px;
+}
+
+.divider .seal-initials {
+  font-size: .85rem;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+  text-align: center;
+  padding: 2.6rem 1.5rem 3rem;
+  background: var(--ivoire);
+  font-size: .75rem;
+  color: rgba(43,38,32,.45);
+  letter-spacing: .06em;
+}
+
+/* ==================================================
+   HERO ANIMATIONS
+================================================== */
+
+.hero-photo {
+  animation: heroZoom 12s ease-out forwards;
+  transform-origin: center center;
+}
+
+.hero-content>* {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.hero-content .seal {
+  animation: fadeUp .8s ease forwards;
+}
+
+.hero-content .hero-names {
+  animation: fadeUp .8s ease forwards;
+  animation-delay: .3s;
+}
+
+.hero-content .hero-date {
+  animation: fadeUp .8s ease forwards;
+  animation-delay: .6s;
+}
+
+.hero-scroll {
+  opacity: 0;
+  animation: fadeUpScroll .8s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpScroll {
+  from {
+    opacity: 0;
+    transform: translate(-50%,25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%,0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.06);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ==================================================
+   NOUVELLES ANIMATIONS SECTIONS
+================================================== */
+
+.story-section.active h2 {
+  animation: fadeUp .8s ease forwards;
+}
+
+.program-section.active .program-item {
+  animation: scaleIn .8s ease forwards;
+}
+
+.message-section.active .seal {
+  animation: scaleIn .8s ease forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==================================================
+   FOCUS ACCESSIBILITE
+================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--or);
+  outline-offset: 3px;
+}
+
+/* ==================================================
+   REDUCTION DES ANIMATIONS
+================================================== */
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-scroll::after {
+    animation: none;
+  }
+
+  .gallery-grid a:hover img {
+    transform: none;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE MOBILE
+================================================== */
+
+@media(max-width:700px) {
+  .section {
+    padding: 4rem 1.2rem;
+  }
+
+  .hero-content {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .hero-names {
+    font-size: 2.8rem;
+  }
+
+  .rings-image {
+    width: 220px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .gallery-grid a:nth-child(4n+1) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .map-frame iframe {
+    height: 260px;
+  }
+
+  .program-item {
+    width: 90%;
+  }
+
+  .message-section p {
+    font-size: .95rem;
+  }
+}
+
+/* ================= MUSIC BUTTON ================= */
+
+.music-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 5;
+  padding: .65rem 1rem;
+  border: 1px solid rgba(253,248,240,.45);
+  border-radius: 30px;
+  background: rgba(20,12,14,.25);
+  backdrop-filter: blur(8px);
+  color: #FDF8F0;
+  font-family: 'Jost', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .3s ease, transform .3s ease, border-color .3s ease;
+}
+
+.music-button:hover {
+  background: rgba(20,12,14,.5);
+  transform: translateY(-2px);
+  border-color: var(--or-clair);
+}
+
+.music-button:active {
+  transform: scale(.96);
+}
+
+@media(max-width:700px) {
+  .music-button {
+    top: 1rem;
+    right: 1rem;
+    font-size: .65rem;
+    padding: .55rem .8rem;
+  }
+}
+
+/* ---------- RSVP ---------- */
+
+.rsvp-section {
+  background: var(--or-fonce);
+  color: var(--ivoire);
+}
+
+.rsvp-section h2 {
+  color: var(--ivoire);
+}
+
+.rsvp-section .divider .line {
+  background: rgba(253,248,240,0.18);
+}
+
+.rsvp-sub {
+  max-width: 480px;
+  margin: 0.4rem auto 2rem;
+  color: #000000;
+  font-size: 0.98rem;
+}
+
+.rsvp-btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--or-fonce);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  padding: 1.05rem 2.6rem;
+  border-radius: 2px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.rsvp-btn:hover {
+  background: var(--or-clair);
+  transform: translateY(-2px);
+}
+
+.rsvp-deadline {
+  margin-top: 1.4rem;
+  font-size: 0.78rem;
+  color: rgba(253,248,240,0.55);
+  letter-spacing: 0.06em;
+}
+
+/* ================= RSVP PAGE ================= */
+
+.rsvp-page {
+  padding: 40px 20px;
+  background: #faf7f2;
+}
+
+.rsvp-card {
+  max-width: 550px;
+  margin: auto;
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.rsvp-card h1 {
+  margin: 25px 0 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+}
+
+.rsvp-sub {
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.rsvp-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.radio-options label {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.radio-options input {
+  margin-right: 8px;
+}
+
+.rsvp-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+}
+
+.rsvp-deadline {
+  margin-top: 25px;
+  font-size: .9rem;
+  opacity: .7;
+}
+
+@media(max-width:600px) {
+  .rsvp-card {
+    padding: 25px 20px;
+  }
+
+  .rsvp-card h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ================= RSVP ANIMATIONS ================= */
+
+.rsvp-btn {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.rsvp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+.rsvp-btn:active {
+  transform: scale(.98);
+}
+
+/* ================= DEUXIÈME VERSET ================= */
+
+.verse-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 300px;
+  margin: 2.5rem auto;
+}
+
+.verse-divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--ligne);
+}
+
+.verse-heart {
+  color: var(--or);
+  font-size: .8rem;
+  line-height: 1;
+}
+
+.verse-text-2 {
+  margin-top: 0;
+}
+/* ================= RSVP + CADEAU ================= */
+
+.rsvp-section {
+  background: var(--or-fonce);
+  color: var(--blanc-ivoire);
+}
+
+.rsvp-section h2 {
+  color: var(--blanc-ivoire);
+  font-size: clamp(2rem,5vw,2.8rem);
+}
+
+.rsvp-sub {
+  max-width: 500px;
+  margin: 1rem auto 2rem;
+  color: var(--champagne);
+  font-size: .98rem;
+  line-height: 1.8;
+}
+
+.rsvp-btn {
+  display: inline-block;
+  background: var(--champagne);
+  color: var(--encre);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: .82rem;
+  padding: 1.05rem 2.6rem;
+  border-radius: 2px;
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.rsvp-btn:hover {
+  background: var(--ivoire);
+  color: var(--or-fonce);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(74,64,53,.25);
+}
+
+.rsvp-deadline {
+  margin-top: 1.4rem;
+  font-size: .78rem;
+  color: rgba(243,244,238,.72);
+  letter-spacing: .06em;
+}
+
+/* ---------- Séparation ---------- */
+
+.gift-divider {
+  width: 80px;
+  height: 1px;
+  background: rgba(243,244,238,.35);
+  margin: 3.5rem auto 2.8rem;
+}
+
+/* ---------- Message cadeau ---------- */
+
+.gift-message {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gift-message h3 {
+  color: var(--champagne);
+  font-size: clamp(1.5rem,4vw,2rem);
+  margin-bottom: 1rem;
+}
+
+.gift-message p {
+  color: rgba(243,244,238,.85);
+  font-size: .92rem;
+  line-height: 1.8;
+}
+
+/* ---------- Interac ---------- */
+
+.interac-box {
+  margin: 1.8rem auto 0;
+  padding: 1.2rem 1.5rem;
+  max-width: 390px;
+  border: 1px solid rgba(243,244,238,.32);
+  border-radius: 8px;
+  background: rgba(243,244,238,.07);
+}
+
+.interac-label {
+  display: block;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--champagne);
+  margin-bottom: .5rem;
+}
+
+.interac-email {
+  display: block;
+  color: var(--blanc-ivoire);
+  font-size: .95rem;
+  word-break: break-word;
+}
+
+/* ---------- Signature ---------- */
+
+.rsvp-thanks {
+  margin-top: 3rem;
+  color: rgba(243,244,238,.78);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.rsvp-thanks strong {
+  color: var(--champagne);
+  font-size: 1.3rem;
+}
+
+/* ---------- Cadeaux ---------- */
+
+.gift-options {
+  margin: 0;
+  padding-left: 1.3rem;
+  text-align: left;
+}
+
+.gift-options li {
+  margin-bottom: .7rem;
+  color: var(--blanc-ivoire);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.gift-options li:last-child {
+  margin-bottom: 0;
+}
+
+.gift-options strong {
+  color: var(--champagne);
+  font-weight: 500;
+  word-break: break-word;
+}

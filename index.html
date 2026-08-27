@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Steve & Charlotte</title>
+
+  <meta
+    name="description"
+    content="Invitation au mariage de Steve & Charlotte — 19 Septembre 2026 à Québec."
+  >
+
+  <!-- ================= APERÇU DU LIEN ================= -->
+
+<meta
+  property="og:title"
+  content="Steve & Charlotte"
+>
+
+<meta
+  property="og:description"
+  content="Nous avons le plaisir de vous inviter à célébrer notre mariage."
+>
+
+<meta
+  property="og:type"
+  content="website"
+>
+
+<meta
+  property="og:url"
+  content="https://stevexcharlotte.netlify.app/"
+>
+
+<meta
+  property="og:site_name"
+  content="Steve & Charlotte"
+>
+
+<meta
+  property="og:image"
+  content="https://stevexcharlotte.netlify.app/assets/images/hero1.png"
+>
+
+<meta
+  property="og:image:width"
+  content="1200"
+>
+
+<meta
+  property="og:image:height"
+  content="630"
+>
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="Steve & Charlotte"
+>
+
+<meta
+  name="twitter:description"
+  content="Nous avons le plaisir de vous inviter à célébrer notre mariage."
+>
+
+<meta
+  name="twitter:image"
+  content="https://stevexcharlotte.netlify.app/assets/images/hero1.png"
+>
+  <!-- ================= POLICES ================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ================= CSS ================= -->
+
+  <link
+    rel="stylesheet"
+    href="css/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/responsive.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="hero">
+
+  <button class="music-button" id="musicButton" type="button">
+    ♪ Musique
+  </button>
+
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="assets/music/mariage.mp3" type="audio/mpeg">
+  </audio>
+
+  <img 
+    class="hero-photo" 
+    id="heroPhoto" 
+    alt=""
+    onerror="this.style.display='none'; document.getElementById('heroFallback').style.display='block';"
+  >
+
+  <div class="hero-photo-fallback" id="heroFallback" style="display:none;"></div>
+
+  <div class="hero-scrim"></div>
+
+
+  <div class="hero-content">
+
+    <div class="seal">
+      <span class="seal-initials" id="sealInitials">
+        S&amp;C
+      </span>
+    </div>
+
+
+    <h1 class="hero-names" id="heroNames">
+      Steve <span class="amp">&amp;</span> Charlotte
+    </h1>
+
+
+    <p class="hero-date" id="heroDate">
+      19 Septembre 2026 — Québec
+    </p>
+
+
+  </div>
+
+
+  <div class="hero-scroll">
+    Découvrir
+  </div>
+
+
+</section>
+
+
+<!-- ================= VERSET ================= -->
+
+<section class="section verse-section reveal" id="verset">
+
+  <div class="verse-mark">&#8220;</div>
+
+  <h2 style="margin-top:0.5rem; font-size:clamp(1.6rem,4vw,2.1rem);">
+    Charlotte à Steve
+  </h2>
+
+  <p class="verse-text" id="verseText">
+    A peine les avais-je passés, Que j'ai trouvé celui que mon coeur aime; Je l'ai saisi, et je ne l'ai 
+    point lâché Jusqu'à ce que je l'aie amené dans la maison de ma mère, Dans la chambre de celle qui m'a conçue.
+  </p>
+
+  <p class="verse-ref" id="verseRef">
+    Cantique des Cantiques 3:4
+  </p>
+
+
+  <div class="verse-divider">
+    <span></span>
+    <div class="verse-heart">♥</div>
+    <span></span>
+  </div>
+
+
+  <h2 style="margin-top:0.5rem; font-size:clamp(1.6rem,4vw,2.1rem);">
+    Steve à Charlotte
+  </h2>
+
+  <p class="verse-text verse-text-2" id="verseText2">
+    Comme un lis au milieu des épines, Telle est mon amie parmi les jeunes filles.
+  </p>
+
+  <p class="verse-ref" id="verseRef2">
+    Cantique des Cantiques 2:2
+  </p>
+
+</section>
+
+
+
+
+
+<!-- ================= HISTOIRE ================= -->
+
+
+<section class="section story-section reveal">
+
+
+  <p class="eyebrow">
+    Notre histoire
+  </p>
+
+
+  <p>
+
+    Notre histoire est celle de deux amoureux de Dieu 
+    qui ont décidé de lui offrir leur vie et leur union, 
+    pour servir à la réalisation de ses desseins. 
+
+    Nous sommes heureux de vous convier à la célébration de notre mariage !
+
+  </p>
+
+
+</section>
+
+
+
+
+
+<!-- ================= RINGS ================= -->
+
+
+<section class="section rings-section reveal">
+
+
+  <img 
+    src="assets/images/rings.png" 
+    alt="Alliances de mariage"
+    class="rings-image"
+  >
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= COUNTDOWN ================= -->
+
+
+<section class="section countdown-section reveal" id="compte-a-rebours">
+
+
+  <p class="eyebrow">
+    Le grand jour approche
+  </p>
+
+
+  <h2 style="margin-top:0.5rem; font-size:clamp(1.6rem,4vw,2.1rem);">
+    Compte à rebours
+  </h2>
+
+
+
+  <div class="countdown-grid" id="countdownGrid">
+
+
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-jours">
+        00
+      </div>
+      <div class="countdown-label">
+        Jours
+      </div>
+    </div>
+
+
+
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-heures">
+        00
+      </div>
+      <div class="countdown-label">
+        Heures
+      </div>
+    </div>
+
+
+
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-min">
+        00
+      </div>
+      <div class="countdown-label">
+        Minutes
+      </div>
+    </div>
+
+
+
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-sec">
+        00
+      </div>
+      <div class="countdown-label">
+        Secondes
+      </div>
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= PROGRAMME ================= -->
+
+
+<section class="section program-section reveal">
+
+
+  <p class="eyebrow">
+    Programme
+  </p>
+
+
+  <h2>
+    La cérémonie
+  </h2>
+
+
+  <div class="program-item">
+
+    <h3>
+      12h30
+    </h3>
+
+
+    <p>
+      Célébration de notre union
+    </p>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= LOCATION ================= -->
+
+
+<section class="section location-section reveal" id="lieu">
+
+
+  <p class="eyebrow">
+    Là où tout se passe
+  </p>
+
+
+  <h2 class="location-name" id="locationName">
+    Église Vases d'Honneur Québec
+  </h2>
+
+
+
+  <p class="location-address" id="locationAddress">
+    3095 Bd Wilfrid-Hamel, Québec, QC G1P 2G9
+  </p>
+
+
+
+  <div class="map-frame">
+
+    <iframe 
+      id="mapEmbed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+
+
+  </div>
+
+
+
+  <a 
+    class="map-link" 
+    id="mapLink"
+    target="_blank"
+    rel="noopener">
+
+    Ouvrir dans Google Maps →
+
+  </a>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= GALLERY ================= -->
+
+
+<section class="section gallery-section reveal" id="galerie">
+
+
+  <p class="eyebrow">
+    Quelques Photos
+  </p>
+
+
+  <h2 style="margin-top:0.5rem; font-size:clamp(1.6rem,4vw,2.1rem);">
+    Galerie
+  </h2>
+
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section rsvp-section reveal" id="rsvp">
+
+  <div class="divider">
+
+    <div class="line"></div>
+
+    <div class="seal">
+      <span class="seal-initials" id="sealInitials2">
+        S&amp;C
+      </span>
+    </div>
+
+    <div class="line"></div>
+
+  </div>
+
+
+  <h2>Confirmez votre présence</h2>
+
+  <p class="rsvp-sub">
+    Votre présence à nos côtés pour cette journée unique
+    est un cadeau précieux.
+  </p>
+
+
+  <a
+    class="rsvp-btn"
+    id="rsvpBtn"
+    href="rsvp.html"
+  >
+    Répondre au RSVP
+  </a>
+
+
+  <p class="rsvp-deadline" id="rsvpDeadline">
+    Merci de répondre avant le 10 Septembre 2026
+  </p>
+
+
+  <div class="gift-divider"></div>
+
+
+  <div class="gift-message">
+
+    <h3>Cadeaux</h3>
+
+    <p>
+      Nous vous remercions chaleureusement pour votre générosité et votre attention.
+      Si vous souhaitez nous offrir un présent, nous vous serions reconnaissants de bien vouloir le faire selon les modalités suivantes:
+
+    </p>
+
+    <div class="interac-box">
+
+    <ul class="gift-options">
+
+      <li>
+        En espèces
+      </li>
+
+      <li>
+        Virement Interac : <strong>steveetcharlotte@gmail.com</strong>
+      </li>
+
+    </ul>
+
+</div>
+
+  </div>
+
+
+  <p class="rsvp-thanks">
+    Avec amour,<br><br>
+    <strong>Steve &amp; Charlotte</strong>
+  </p>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer id="footerText">
+
+  Steve &amp; Charlotte · 19 Septembre 2026
+
+</footer>
+
+
+
+<script src="js/config.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
+
