@@ -17,7 +17,7 @@ const CONFIG = {
 
   sousTitreHero: "19 Septembre 2026 — Québec",
 
-  photoHero: "assets/images/hero.jpg",
+  photoHero: "assets/images/hero.JPG",
 
 
 
@@ -56,21 +56,21 @@ const CONFIG = {
 
   galerie: [
 
-    "assets/images/photo1.jpg",
+    "assets/images/photo1.JPG",
 
-    "assets/images/photo2.jpg",
+    "assets/images/photo2.JPG",
 
-    "assets/images/photo3.jpg",
+    "assets/images/photo3.JPG",
 
-    "assets/images/photo4.jpg",
+    "assets/images/photo4.JPG",
 
-    "assets/images/photo5.jpg",
+    "assets/images/photo5.JPG",
 
-    "assets/images/photo6.jpg",
+    "assets/images/photo6.JPG",
 
-    "assets/images/photo7.jpg",
+    "assets/images/photo7.JPG",
 
-    "assets/images/photo8.jpg"
+    "assets/images/photo8.JPG"
     
   ]
 
