@@ -425,3 +425,199 @@ if (music && musicButton) {
   });
 
 }
+
+
+/* ==================================================
+   LIGHTBOX GALERIE
+================================================== */
+
+const galleryLinks = document.querySelectorAll(".gallery-grid a");
+
+if (galleryLinks.length > 0) {
+
+  /* ================= CRÉATION DE LA LIGHTBOX ================= */
+
+  const lightbox = document.createElement("div");
+
+  lightbox.className = "gallery-lightbox";
+
+  lightbox.innerHTML = `
+
+    <button
+      class="gallery-lightbox-close"
+      aria-label="Fermer">
+      ×
+    </button>
+
+    <button
+      class="gallery-lightbox-prev"
+      aria-label="Photo précédente">
+      ‹
+    </button>
+
+    <img
+      class="gallery-lightbox-image"
+      src=""
+      alt="Photo du mariage">
+
+    <button
+      class="gallery-lightbox-next"
+      aria-label="Photo suivante">
+      ›
+    </button>
+
+    <div class="gallery-lightbox-counter">
+      1 / ${galleryLinks.length}
+    </div>
+
+  `;
+
+  document.body.appendChild(lightbox);
+
+
+  /* ================= ÉLÉMENTS ================= */
+
+  const lightboxImage =
+    lightbox.querySelector(".gallery-lightbox-image");
+
+  const closeButton =
+    lightbox.querySelector(".gallery-lightbox-close");
+
+  const previousButton =
+    lightbox.querySelector(".gallery-lightbox-prev");
+
+  const nextButton =
+    lightbox.querySelector(".gallery-lightbox-next");
+
+  const counter =
+    lightbox.querySelector(".gallery-lightbox-counter");
+
+
+  let currentGalleryIndex = 0;
+
+
+  /* ================= OUVRIR ================= */
+
+  function openGallery(index) {
+
+    currentGalleryIndex = index;
+
+    const image =
+      galleryLinks[currentGalleryIndex].querySelector("img");
+
+    if (!image) return;
+
+    lightboxImage.src = image.src;
+
+    lightboxImage.alt =
+      image.alt || "Photo du mariage";
+
+    counter.textContent =
+      `${currentGalleryIndex + 1} / ${galleryLinks.length}`;
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+  }
+
+
+  /* ================= FERMER ================= */
+
+  function closeGallery() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+  }
+
+
+  /* ================= PHOTO SUIVANTE ================= */
+
+  function nextGallery() {
+
+    currentGalleryIndex =
+      (currentGalleryIndex + 1) % galleryLinks.length;
+
+    openGallery(currentGalleryIndex);
+  }
+
+
+  /* ================= PHOTO PRÉCÉDENTE ================= */
+
+  function previousGallery() {
+
+    currentGalleryIndex =
+      (currentGalleryIndex - 1 + galleryLinks.length)
+      % galleryLinks.length;
+
+    openGallery(currentGalleryIndex);
+  }
+
+
+  /* ================= CLIC SUR LES PHOTOS ================= */
+
+  galleryLinks.forEach((link, index) => {
+
+    link.addEventListener("click", (event) => {
+
+      event.preventDefault();
+
+      openGallery(index);
+
+    });
+
+  });
+
+
+  /* ================= BOUTONS ================= */
+
+  closeButton.addEventListener(
+    "click",
+    closeGallery
+  );
+
+  nextButton.addEventListener(
+    "click",
+    nextGallery
+  );
+
+  previousButton.addEventListener(
+    "click",
+    previousGallery
+  );
+
+
+  /* ================= CLIC SUR LE FOND ================= */
+
+  lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+      closeGallery();
+    }
+
+  });
+
+
+  /* ================= CLAVIER ================= */
+
+  document.addEventListener("keydown", (event) => {
+
+    if (!lightbox.classList.contains("active")) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeGallery();
+    }
+
+    if (event.key === "ArrowRight") {
+      nextGallery();
+    }
+
+    if (event.key === "ArrowLeft") {
+      previousGallery();
+    }
+
+  });
+
+}
