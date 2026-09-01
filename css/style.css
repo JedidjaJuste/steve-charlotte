@@ -1030,6 +1030,11 @@ footer {
   color: var(--blanc-ivoire);
   font-size: .95rem;
   line-height: 1.6;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: .4rem;
 }
 
 .gift-options li:last-child {
@@ -1150,6 +1155,7 @@ footer {
 
 }
 
+
 /* ================= DRESS CODE ================= */
 
 .dress-code-section {
@@ -1177,10 +1183,11 @@ footer {
   width: 100%;
   max-width: 700px;
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: center;
   align-items: center;
 
   gap: 1.2rem;
@@ -1192,9 +1199,10 @@ footer {
 /* ================= CONTENEUR D'UN CERCLE ================= */
 
 .dress-color {
-  display: flex;
+  width: 105px;
+  height: 105px;
 
-  flex: 0 0 auto;
+  display: flex;
 
   justify-content: center;
   align-items: center;
@@ -1207,6 +1215,7 @@ footer {
   width: 105px;
   height: 105px;
 
+  flex: 0 0 105px;
   flex-shrink: 0;
 
   border-radius: 50%;
@@ -1219,6 +1228,8 @@ footer {
   text-align: center;
 
   padding: .8rem;
+
+  box-sizing: border-box;
 
   box-shadow: 0 8px 20px rgba(74,64,53,.12);
 
@@ -1283,12 +1294,20 @@ footer {
 
   .dress-code-colors {
     max-width: 600px;
+
     gap: 1rem;
+  }
+
+  .dress-color {
+    width: 95px;
+    height: 95px;
   }
 
   .color-circle {
     width: 95px;
     height: 95px;
+
+    flex: 0 0 95px;
   }
 
 }
@@ -1300,24 +1319,74 @@ footer {
 
   .dress-code-colors {
     width: 100%;
-    max-width: 320px;
+    max-width: 330px;
 
-    column-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 0;
     row-gap: 15px;
+
+    justify-items: center;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 1er cercle : centré en haut */
+  .dress-color:nth-child(1) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* 3 cercles au milieu */
+  .dress-color:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .dress-color:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .dress-color:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* Dernier cercle : centré en bas */
+  .dress-color:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .dress-color {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
   }
 
   .color-circle {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
+
+    flex: 0 0 85px;
 
     padding: .6rem;
+
+    box-sizing: border-box;
   }
 
   .color-circle span {
-    font-size: .61rem;
+    font-size: .58rem;
     line-height: 1.2;
   }
-      
+
 }
 
 
@@ -1326,17 +1395,26 @@ footer {
 @media (max-width: 400px) {
 
   .dress-code-colors {
-    max-width: 285px;
+    max-width: 300px;
 
-    column-gap: 8px;
+    column-gap: 0;
     row-gap: 12px;
   }
 
+  .dress-color {
+    width: 75px;
+    height: 75px;
+  }
+
   .color-circle {
-    width: 82px;
-    height: 82px;
+    width: 75px;
+    height: 75px;
+
+    flex: 0 0 75px;
 
     padding: .5rem;
+
+    box-sizing: border-box;
   }
 
   .color-circle span {
@@ -1344,4 +1422,4 @@ footer {
     line-height: 1.15;
   }
 
-}     
+}

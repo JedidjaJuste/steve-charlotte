@@ -29,7 +29,7 @@ const CONFIG = {
 
     reference: "Cantique des Cantiques 3:4",
 
-    texte2: "Comme un lis au milieu des épines, Telle est mon amie parmi les jeunes filles.",
+    texte2: "Comme un lys au milieu des épines, Telle est mon amie parmi les jeunes filles.",
 
     reference2: "Cantique des Cantiques 2:2"
   },

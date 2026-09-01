@@ -322,8 +322,7 @@ function pulse(id){
 
   }
 
-}
-/* ================= MUSIQUE ================= */
+}/* ================= MUSIQUE ================= */
 
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
@@ -331,7 +330,17 @@ const musicHint = document.getElementById("musicHint");
 
 if (music && musicButton) {
 
-  // Tentative de lecture automatique
+  // ================= RESTAURER LA POSITION =================
+
+  const savedTime = sessionStorage.getItem("musicTime");
+
+  if (savedTime) {
+    music.currentTime = parseFloat(savedTime);
+  }
+
+
+  // ================= TENTATIVE DE LECTURE AUTOMATIQUE =================
+
   music.play()
     .then(() => {
 
@@ -354,7 +363,27 @@ if (music && musicButton) {
     });
 
 
-  // Bouton lecture / pause
+  // ================= SAUVEGARDER LA POSITION =================
+
+  setInterval(() => {
+
+    if (!music.paused) {
+      sessionStorage.setItem("musicTime", music.currentTime);
+    }
+
+  }, 500);
+
+
+  // Sauvegarder juste avant de quitter la page
+  window.addEventListener("beforeunload", () => {
+
+    sessionStorage.setItem("musicTime", music.currentTime);
+
+  });
+
+
+  // ================= BOUTON LECTURE / PAUSE =================
+
   musicButton.addEventListener("click", async () => {
 
     // Si la musique est arrêtée
