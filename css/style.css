@@ -718,46 +718,6 @@ footer {
   }
 }
 
-/* ================= MUSIC BUTTON ================= */
-
-.music-button {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 5;
-  padding: .65rem 1rem;
-  border: 1px solid rgba(253,248,240,.45);
-  border-radius: 30px;
-  background: rgba(20,12,14,.25);
-  backdrop-filter: blur(8px);
-  color: #FDF8F0;
-  font-family: 'Jost', sans-serif;
-  font-size: .72rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background .3s ease, transform .3s ease, border-color .3s ease;
-}
-
-.music-button:hover {
-  background: rgba(20,12,14,.5);
-  transform: translateY(-2px);
-  border-color: var(--or-clair);
-}
-
-.music-button:active {
-  transform: scale(.96);
-}
-
-@media(max-width:700px) {
-  .music-button {
-    top: 1rem;
-    right: 1rem;
-    font-size: .65rem;
-    padding: .55rem .8rem;
-  }
-}
-
 /* ---------- RSVP ---------- */
 
 .rsvp-section {
@@ -1081,3 +1041,307 @@ footer {
   font-weight: 500;
   word-break: break-word;
 }
+
+/* ==================================================
+   MUSIQUE
+================================================== */
+
+.music-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  z-index: 10;
+
+  width: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.music-button {
+  position: relative;
+
+  padding: .6rem .9rem;
+
+  border: 1px solid rgba(253,248,240,.45);
+  border-radius: 30px;
+
+  background: rgba(20,12,14,.25);
+  backdrop-filter: blur(8px);
+
+  color: #FDF8F0;
+
+  font-family: 'Jost', sans-serif;
+  font-size: .68rem;
+
+  letter-spacing: .1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background .3s ease,
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+.music-button:hover {
+  background: rgba(20,12,14,.5);
+  transform: translateY(-2px);
+  border-color: var(--or-clair);
+}
+
+.music-button:active {
+  transform: scale(.96);
+}
+
+
+/* ================= TEXTE MUSIQUE ================= */
+
+.music-hint {
+  width: 180px;
+
+  margin: .5rem 0 0;
+
+  padding: 0;
+
+  text-align: right;
+
+  color: rgba(253,248,240,.85);
+
+  font-family: 'Jost', sans-serif;
+  font-size: .62rem;
+  line-height: 1.4;
+
+  transition:
+    opacity .4s ease,
+    visibility .4s ease;
+}
+
+.music-hint.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .music-container {
+    top: .8rem;
+    right: .8rem;
+
+    width: 150px;
+  }
+
+  .music-button {
+    font-size: .6rem;
+    padding: .5rem .75rem;
+  }
+
+  .music-hint {
+    width: 150px;
+    font-size: .56rem;
+  }
+
+}
+
+/* ================= DRESS CODE ================= */
+
+.dress-code-section {
+  background: var(--ivoire);
+}
+
+.dress-code-section h2 {
+  margin-top: .8rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.dress-code-intro {
+  max-width: 550px;
+  margin: 1.2rem auto 0;
+
+  color: var(--encre-clair);
+
+  line-height: 1.8;
+}
+
+
+/* ================= CONTENEUR DES COULEURS ================= */
+
+.dress-code-colors {
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.2rem;
+
+  margin: 2.5rem auto 0;
+}
+
+
+/* ================= CONTENEUR D'UN CERCLE ================= */
+
+.dress-color {
+  display: flex;
+
+  flex: 0 0 auto;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ================= CERCLE ================= */
+
+.color-circle {
+  width: 105px;
+  height: 105px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: .8rem;
+
+  box-shadow: 0 8px 20px rgba(74,64,53,.12);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+  overflow: hidden;
+}
+
+
+/* ================= TEXTE DANS LE CERCLE ================= */
+
+.color-circle span {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-family: 'Jost', sans-serif;
+
+  font-size: .72rem;
+
+  line-height: 1.25;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  font-weight: 500;
+
+  color: var(--encre);
+
+  overflow-wrap: break-word;
+}
+
+
+/* ================= ANIMATION ================= */
+
+.color-circle:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 14px 28px rgba(74,64,53,.18);
+}
+
+
+/* ================= TEXTES SUR COULEURS FONCÉES ================= */
+
+.color-circle[style*="var(--or)"] span,
+.color-circle[style*="var(--encre)"] span {
+  color: var(--blanc-ivoire);
+}
+
+
+/* ================= TABLETTE ================= */
+
+@media (max-width: 900px) {
+
+  .dress-code-colors {
+    max-width: 600px;
+    gap: 1rem;
+  }
+
+  .color-circle {
+    width: 95px;
+    height: 95px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .dress-code-colors {
+    width: 100%;
+    max-width: 320px;
+
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+
+  .color-circle {
+    width: 90px;
+    height: 90px;
+
+    padding: .6rem;
+  }
+
+  .color-circle span {
+    font-size: .61rem;
+    line-height: 1.2;
+  }
+      
+}
+
+
+/* ================= PETIT MOBILE ================= */
+
+@media (max-width: 400px) {
+
+  .dress-code-colors {
+    max-width: 285px;
+
+    column-gap: 8px;
+    row-gap: 12px;
+  }
+
+  .color-circle {
+    width: 82px;
+    height: 82px;
+
+    padding: .5rem;
+  }
+
+  .color-circle span {
+    font-size: .55rem;
+    line-height: 1.15;
+  }
+
+}     

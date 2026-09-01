@@ -25,7 +25,7 @@ const CONFIG = {
 
   verset: {
 
-    texte: "A peine les avais-je passés, Que j'ai trouvé celui que mon coeur aime; Je l'ai saisi, et je ne l'ai point lâché Jusqu'à ce que je l'aie amené dans la maison de ma mère, Dans la chambre de celle qui m'a conçue.",
+    texte: "A peine les avais-je passés, Que j'ai trouvé celui que mon coeur aime; Je l'ai saisi, et je ne l'ai point lâché...",
 
     reference: "Cantique des Cantiques 3:4",
 

@@ -113,9 +113,18 @@
 
 <section class="hero" id="hero">
 
-  <button class="music-button" id="musicButton" type="button">
-    ♪ Musique
-  </button>
+<div class="music-container">
+
+    <button class="music-button" id="musicButton" type="button">
+        ♪ Musique
+    </button>
+
+    <p class="music-hint" id="musicHint">
+        Pour une meilleure expérience, veuillez faire jouer la musique
+        en cliquant sur l'icône en haut à droite.
+    </p>
+
+</div>
 
   <audio id="weddingMusic" loop preload="auto">
     <source src="assets/music/mariage.mp3" type="audio/mpeg">
@@ -175,7 +184,7 @@
 
   <p class="verse-text" id="verseText">
     A peine les avais-je passés, Que j'ai trouvé celui que mon coeur aime; Je l'ai saisi, et je ne l'ai 
-    point lâché Jusqu'à ce que je l'aie amené dans la maison de ma mère, Dans la chambre de celle qui m'a conçue.
+    point lâché...
   </p>
 
   <p class="verse-ref" id="verseRef">
@@ -191,7 +200,7 @@
 
 
   <h2 style="margin-top:0.5rem; font-size:clamp(1.6rem,4vw,2.1rem);">
-    Steve à Charlotte
+    Le retour de Ahavah
   </h2>
 
   <p class="verse-text verse-text-2" id="verseText2">
@@ -333,37 +342,179 @@
 <!-- ================= PROGRAMME ================= -->
 
 
+
 <section class="section program-section reveal">
 
 
+
   <p class="eyebrow">
-    Programme
+    Programme
   </p>
 
 
+
   <h2>
-    La cérémonie
+    La cérémonie
   </h2>
+
 
 
   <div class="program-item">
 
-    <h3>
-      12h30
-    </h3>
 
 
-    <p>
-      Célébration de notre union
-    </p>
+    <h3>
+      12h30
+    </h3>
+
+
+
+    <p>
+      Célébration de notre union
+    </p>
+
 
 
   </div>
 
 
+
 </section>
 
 
+
+
+
+<!-- ================= DRESS CODE ================= -->
+
+
+
+<section class="section dress-code-section reveal" id="dress-code">
+
+
+
+  <p class="eyebrow">
+  Dress Code
+  </p>
+
+
+
+  <h2>
+    Les couleurs à l'honneur
+  </h2>
+
+  <div class="dress-code-colors">
+
+
+
+    <div class="dress-color">
+
+
+
+      <div
+        class="color-circle"
+        style="background:var(--ivoire);"
+      >
+        <span>
+          Ivoire
+        </span>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="dress-color">
+
+
+
+      <div
+        class="color-circle"
+        style="background:var(--champagne);"
+      >
+        <span>
+          Champagne
+        </span>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="dress-color">
+
+
+
+      <div
+        class="color-circle"
+        style="background:var(--beige);"
+      >
+        <span>
+          Beige
+        </span>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="dress-color">
+
+
+
+      <div
+        class="color-circle"
+        style="background:var(--or);"
+      >
+        <span>
+          Doré
+        </span>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="dress-color">
+
+
+
+      <div
+        class="color-circle"
+        style="background:var(--encre);"
+      >
+        <span>
+          Brun
+        </span>
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
 
 
 
@@ -372,60 +523,57 @@
 <!-- ================= LOCATION ================= -->
 
 
+
 <section class="section location-section reveal" id="lieu">
 
 
+
   <p class="eyebrow">
-    Là où tout se passe
+    Là où tout se passe
   </p>
 
 
+
   <h2 class="location-name" id="locationName">
-    Église Vases d'Honneur Québec
+    Église Vases d'Honneur Québec
   </h2>
 
 
 
   <p class="location-address" id="locationAddress">
-    3095 Bd Wilfrid-Hamel, Québec, QC G1P 2G9
+    3095 Bd Wilfrid-Hamel, Québec, QC G1P 2G9
   </p>
 
 
 
   <div class="map-frame">
 
-    <iframe 
-      id="mapEmbed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
+
+
+    <iframe
+      id="mapEmbed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+
 
 
   </div>
 
 
 
-  <a 
-    class="map-link" 
-    id="mapLink"
-    target="_blank"
-    rel="noopener">
-
-    Ouvrir dans Google Maps →
-
+  <a
+    class="map-link"
+    id="mapLink"
+    target="_blank"
+    rel="noopener">
+    Ouvrir dans Google Maps →
   </a>
 
 
 
 </section>
-
-
-
-
-
-
-
 <!-- ================= GALLERY ================= -->
 
 
@@ -510,7 +658,7 @@
     <ul class="gift-options">
 
       <li>
-        En espèces
+        En espèces : <strong>+ 1 (418) 410-0989</strong>
       </li>
 
       <li>
@@ -549,4 +697,16 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 

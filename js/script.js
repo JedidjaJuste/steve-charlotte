@@ -323,45 +323,76 @@ function pulse(id){
   }
 
 }
-
 /* ================= MUSIQUE ================= */
 
 const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
+const musicHint = document.getElementById("musicHint");
 
-if(music){
+if (music && musicButton) {
 
+  // Tentative de lecture automatique
   music.play()
     .then(() => {
 
-      if(musicButton){
-        musicButton.textContent = "Ⅱ Musique";
+      musicButton.textContent = "Ⅱ Musique";
+
+      if (musicHint) {
+        musicHint.classList.add("hidden");
       }
 
     })
     .catch(() => {
 
-      // Le navigateur a bloqué l'autoplay.
-      // La musique pourra être lancée avec le bouton.
+      // Autoplay bloqué par le navigateur
+      musicButton.textContent = "♪ Musique";
 
-if(musicButton){
+      if (musicHint) {
+        musicHint.classList.remove("hidden");
+      }
 
+    });
+
+
+  // Bouton lecture / pause
   musicButton.addEventListener("click", async () => {
 
+    // Si la musique est arrêtée
     if (music.paused) {
-      await music.play();
-      musicButton.textContent = "Ⅱ Musique";
-    } else {
+
+      try {
+
+        await music.play();
+
+        musicButton.textContent = "Ⅱ Musique";
+
+        // Cacher le message
+        if (musicHint) {
+          musicHint.classList.add("hidden");
+        }
+
+      } catch (error) {
+
+        console.log("Lecture bloquée par le navigateur.");
+
+      }
+
+    }
+
+    // Si la musique joue déjà
+    else {
+
       music.pause();
+
       musicButton.textContent = "♪ Musique";
+
+      // Faire réapparaître le message
+      if (musicHint) {
+        musicHint.classList.remove("hidden");
+      }
+
     }
 
   });
 
 }
-
-    });
-
-}
-
-
