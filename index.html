@@ -13,7 +13,10 @@
     content="Invitation au mariage de Steve & Charlotte — 19 Septembre 2026 à Québec."
   >
 
-  <!-- ================= APERÇU DU LIEN ================= -->
+  <!-- ================= APERÇU DU LIEN =================
+     À MODIFIER pour chaque couple (noms, adresse du site, image) :
+     les réseaux sociaux lisent ces balises avant que le JavaScript s'exécute,
+     elles ne peuvent donc pas venir de config.js. -->
 
 <meta
   property="og:title"
@@ -228,15 +231,7 @@
   </p>
 
 
-  <p>
-
-    Notre histoire est celle de deux amoureux de Dieu 
-    qui ont décidé de lui offrir leur vie et leur union, 
-    pour servir à la réalisation de ses desseins. 
-
-    Nous sommes heureux de vous convier à la célébration de notre mariage !
-
-  </p>
+  <p id="storyText"></p>
 
 
 </section>
@@ -360,21 +355,8 @@
 
 
   <div class="program-item">
-
-
-
-    <h3>
-      12h30
-    </h3>
-
-
-
-    <p>
-      Célébration de notre union
-    </p>
-
-
-
+    <h3 id="programTime"></h3>
+    <p id="programDesc"></p>
   </div>
 
 
@@ -403,117 +385,7 @@
     Les couleurs à l'honneur
   </h2>
 
-  <div class="dress-code-colors">
-
-
-
-    <div class="dress-color">
-
-
-
-      <div
-        class="color-circle"
-        style="background:var(--ivoire);"
-      >
-        <span>
-          Ivoire
-        </span>
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="dress-color">
-
-
-
-      <div
-        class="color-circle"
-        style="background:var(--champagne);"
-      >
-        <span>
-          Champagne
-        </span>
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="dress-color">
-
-
-
-      <div
-        class="color-circle"
-        style="background:var(--beige);"
-      >
-        <span>
-          Beige
-        </span>
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="dress-color">
-
-
-
-      <div
-        class="color-circle"
-        style="background:var(--or);"
-      >
-        <span>
-          Doré
-        </span>
-      </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="dress-color">
-
-
-
-      <div
-        class="color-circle"
-        style="background:var(--encre);"
-      >
-        <span>
-          Brun
-        </span>
-      </div>
-
-
-
-    </div>
-
-
-
-  </div>
-
-
-
+  <div class="dress-code-colors" id="dressColors"></div>
 </section>
 
 
@@ -635,9 +507,7 @@
   </a>
 
 
-  <p class="rsvp-deadline" id="rsvpDeadline">
-    Merci de répondre avant le 10 Septembre 2026
-  </p>
+  <p class="rsvp-deadline" id="rsvpDeadline"></p>
 
 
   <div class="gift-divider"></div>
@@ -657,13 +527,9 @@
 
     <ul class="gift-options">
 
-      <li>
-        En espèces : <strong>+ 1 (418) 410-0989</strong>
-      </li>
+      <li id="giftCashItem">En espèces : <strong id="giftCash"></strong></li>
 
-      <li>
-        Virement Interac : <strong>steveetcharlotte@gmail.com</strong>
-      </li>
+      <li id="giftInteracItem">Virement Interac : <strong id="giftInterac"></strong></li>
 
     </ul>
 

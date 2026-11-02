@@ -138,6 +138,84 @@ if(footer){
 
 
 
+// ================= SEAL (2e monogramme) =================
+const seal2 = document.getElementById('sealInitials2');
+if(seal2){
+  seal2.innerHTML = monogramme;
+}
+
+// ================= HISTOIRE =================
+const storyText = document.getElementById('storyText');
+if(storyText && CONFIG.histoire){
+  storyText.textContent = CONFIG.histoire;
+}
+
+// ================= PROGRAMME =================
+const programTime = document.getElementById('programTime');
+if(programTime && CONFIG.programme){
+  programTime.textContent = CONFIG.programme.heure;
+}
+
+const programDesc = document.getElementById('programDesc');
+if(programDesc && CONFIG.programme){
+  programDesc.textContent = CONFIG.programme.description;
+}
+
+// ================= DRESS CODE =================
+function estFonce(hex){
+  const h = hex.replace('#','');
+  const r = parseInt(h.substring(0,2),16);
+  const g = parseInt(h.substring(2,4),16);
+  const b = parseInt(h.substring(4,6),16);
+  return (0.299*r + 0.587*g + 0.114*b) < 155;
+}
+
+const dressColors = document.getElementById('dressColors');
+if(dressColors && CONFIG.dressCode){
+  CONFIG.dressCode.couleurs.forEach(couleur => {
+    const bloc = document.createElement('div');
+    bloc.className = 'dress-color';
+
+    const cercle = document.createElement('div');
+    cercle.className = 'color-circle';
+    cercle.style.background = couleur.hex;
+
+    const nom = document.createElement('span');
+    nom.textContent = couleur.nom;
+    if(estFonce(couleur.hex)){
+      nom.style.color = 'var(--blanc-ivoire)';
+    }
+
+    cercle.appendChild(nom);
+    bloc.appendChild(cercle);
+    dressColors.appendChild(bloc);
+  });
+}
+
+// ================= CADEAUX =================
+function afficherCadeau(idItem, idValeur, valeur){
+  const item = document.getElementById(idItem);
+  const cible = document.getElementById(idValeur);
+  if(!item || !cible) return;
+  if(valeur){
+    cible.textContent = valeur;
+  } else {
+    item.style.display = 'none';
+  }
+}
+
+if(CONFIG.cadeaux){
+  afficherCadeau('giftCashItem', 'giftCash', CONFIG.cadeaux.especes);
+  afficherCadeau('giftInteracItem', 'giftInterac', CONFIG.cadeaux.interac);
+}
+
+// ================= DATE LIMITE RSVP =================
+const rsvpDeadline = document.getElementById('rsvpDeadline');
+if(rsvpDeadline && CONFIG.rsvp){
+  rsvpDeadline.textContent =
+  `Merci de répondre avant le ${CONFIG.rsvp.dateLimite}`;
+}
+
 // ================= GALERIE =================
 
 

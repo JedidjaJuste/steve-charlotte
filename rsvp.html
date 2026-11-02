@@ -7,74 +7,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Steve & Charlotte</title>
+  <title>RSVP</title>
 
-  <meta
-    name="description"
-    content="Invitation au mariage de Steve & Charlotte — 19 Septembre 2026 à Québec."
-  >
-
-  <!-- ================= APERÇU DU LIEN ================= -->
-
-<meta
-  property="og:title"
-  content="Steve & Charlotte"
->
-
-<meta
-  property="og:description"
-  content="Nous avons le plaisir de vous inviter à célébrer notre mariage."
->
-
-<meta
-  property="og:type"
-  content="website"
->
-
-<meta
-  property="og:url"
-  content="https://stevexcharlotte.netlify.app/"
->
-
-<meta
-  property="og:site_name"
-  content="Steve & Charlotte"
->
-
-<meta
-  property="og:image"
-  content="https://stevexcharlotte.netlify.app/assets/images/hero1.png"
->
-
-<meta
-  property="og:image:width"
-  content="1200"
->
-
-<meta
-  property="og:image:height"
-  content="630"
->
-
-<meta
-  name="twitter:card"
-  content="summary_large_image"
->
-
-<meta
-  name="twitter:title"
-  content="Steve & Charlotte"
->
-
-<meta
-  name="twitter:description"
-  content="Nous avons le plaisir de vous inviter à célébrer notre mariage."
->
-
-<meta
-  name="twitter:image"
-  content="https://stevexcharlotte.netlify.app/assets/images/hero1.png"
->
+  <meta name="description" content="Confirmez votre présence au mariage.">
 
   <!-- ================= POLICES ================= -->
 
@@ -118,7 +53,7 @@
       <div class="line"></div>
 
       <div class="seal">
-        <span class="seal-initials">S&amp;C</span>
+        <span class="seal-initials" id="sealInitials"></span>
       </div>
 
       <div class="line"></div>
@@ -143,6 +78,17 @@
           id="name"
           type="text"
           placeholder="Votre nom complet"
+          required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="email">Courriel</label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Votre courriel"
           required>
       </div>
 
@@ -188,6 +134,13 @@
       </div>
 
 
+      <div class="form-group" id="invitesGroup" style="display:none;">
+        <label for="invites">Nombre de personnes (vous inclus)</label>
+
+        <select id="invites"></select>
+      </div>
+
+
       <button class="rsvp-btn" type="submit">
         Envoyer ma réponse
       </button>
@@ -196,9 +149,7 @@
     </form>
 
 
-    <p class="rsvp-deadline">
-      Merci de répondre avant le 1er août 2026
-    </p>
+    <p class="rsvp-deadline" id="rsvpDeadline"></p>
 
 
   </div>
@@ -206,6 +157,7 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/config.js"></script>
 <script src="js/rsvp.js"></script>
 
 </body>
